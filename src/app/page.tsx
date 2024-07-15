@@ -148,7 +148,7 @@ const Page = () => {
                             type="button"
                             onClick={modalHandler}
                             title="close"
-                            className="absolute top-0 right-0 w-[50px] h-[50px] flex justify-center items-center hover:bg-[#303030] focus:bg-[#303030] outline-none rounded-tr-lg"
+                            className="absolute top-0 right-0 w-[50px] h-[50px] flex justify-center items-center hover:bg-[#303030] focus:bg-[#303030] outline-none sm:rounded-tr-lg"
                         >
                             <IoClose size={30} />
                         </button>

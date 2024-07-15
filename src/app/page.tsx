@@ -12,15 +12,7 @@ interface IData {
 }
 
 const Page = () => {
-    const [data, setData] = useState<IData[]>([
-        {
-            id: new Date().getTime(),
-            firstName: "Usmonjon",
-            lastName: "Hasanov",
-            username: "DevMERN",
-            ielts: 7.5,
-        },
-    ]);
+    const [data, setData] = useState<IData[]>([]);
 
     const [modal, setModal] = useState(false);
 
@@ -33,6 +25,16 @@ const Page = () => {
         const users = localStorage.getItem("users");
         if (users) {
             setData([...data, ...JSON.parse(users)]);
+        } else {
+            setData([
+                {
+                    id: new Date().getTime(),
+                    firstName: "Usmonjon",
+                    lastName: "Hasanov",
+                    username: "DevMERN",
+                    ielts: 7.5,
+                },
+            ]);
         }
     }, []);
 

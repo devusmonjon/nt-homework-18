@@ -1,113 +1,207 @@
-import Image from "next/image";
+"use client";
+import { useEffect, useState } from "react";
+import { FaPlus } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+interface IData {
+    id: number;
+    firstName: string;
+    lastName: string;
+    username: string;
+    ielts: number;
 }
+
+const Page = () => {
+    const [data, setData] = useState<IData[]>([
+        {
+            id: new Date().getTime(),
+            firstName: "Usmonjon",
+            lastName: "Hasanov",
+            username: "DevMERN",
+            ielts: 7.5,
+        },
+    ]);
+
+    const [modal, setModal] = useState(false);
+
+    const [firstName, setFirstName] = useState<string>("");
+    const [lastName, setLastName] = useState<string>("");
+    const [username, setUsername] = useState<string>("");
+    const [ielts, setIelts] = useState<number>(0.5);
+
+    useEffect(() => {
+        const users = localStorage.getItem("users");
+        if (users) {
+            setData([...data, ...JSON.parse(users)]);
+        }
+    }, []);
+
+    const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (firstName && lastName && username && ielts) {
+            const newData = {
+                id: new Date().getTime(),
+                firstName,
+                lastName,
+                username,
+                ielts,
+            };
+            setData([...data, newData]);
+            localStorage.setItem("users", JSON.stringify([...data, newData]));
+            setFirstName("");
+            setLastName("");
+            setUsername("");
+            setIelts(0.5);
+            setModal(false);
+        } else {
+            alert("All fields are required");
+        }
+    };
+
+    const inputHandler = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+    ) => {
+        if (e.target.name === "firstname") {
+            setFirstName(e.target.value);
+        } else if (e.target.name === "lastname") {
+            setLastName(e.target.value);
+        } else if (e.target.name === "username") {
+            setUsername(e.target.value);
+        } else if (e.target.name === "ielts") {
+            setIelts(Number(e.target.value));
+        }
+    };
+
+    const modalHandler = () => {
+        setModal(!modal);
+    };
+
+    return (
+        <main className="w-full h-screen overflow-hidden">
+            <div className="w-full max-w-[1200px] px-[40px] m-[0_auto]">
+                <button
+                    onClick={modalHandler}
+                    title="Add"
+                    className="rounded-full w-[50px] h-[50px] flex justify-center items-center mt-[50px] hover:bg-[#303030] focus:bg-[#303030] outline-none"
+                >
+                    <FaPlus size={20} />
+                </button>
+                <div className="w-full mt-[50px] rounded-lg overflow-hidden tbl table-wrapper max-h-[70vh] overflow-y-auto">
+                    <table className="w-full text-center">
+                        <thead className="bg-[#222]">
+                            <tr>
+                                <th className="md:table-cell hidden">#ID</th>
+                                <th className="md:table-cell hidden">
+                                    First Name
+                                </th>
+                                <th className="md:table-cell hidden">
+                                    Last Name
+                                </th>
+                                <th className="md:table-cell hidden">
+                                    username
+                                </th>
+                                <th className="md:table-cell hidden">IELTS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {data.map((item, idx) => (
+                                <tr
+                                    className="bg-[#202020] md:bg-none flex flex-col items-start md:table-row"
+                                    key={item.id}
+                                >
+                                    <td>{idx + 1}</td>
+                                    <td>{item.firstName}</td>
+                                    <td>{item.lastName}</td>
+                                    <td>{item.username}</td>
+                                    <td>{item.ielts}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                <div
+                    className={`position relative top-0 left-0 z-50 w-full h-screen animate-fade-show ${
+                        modal ? "block" : "hidden"
+                    }`}
+                >
+                    <div
+                        className="z-[49] bg-[#47474780] w-full h-screen fixed top-0 left-0"
+                        onClick={modalHandler}
+                    ></div>
+                    <form
+                        onSubmit={submitHandler}
+                        className="z-[51] w-[700px] rounded-lg table-wrapper fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-black p-[30px]"
+                    >
+                        <button
+                            type="button"
+                            onClick={modalHandler}
+                            title="close"
+                            className="absolute top-0 right-0 w-[50px] h-[50px] flex justify-center items-center hover:bg-[#303030] focus:bg-[#303030] outline-none"
+                        >
+                            <IoClose size={20} />
+                        </button>
+                        <input
+                            value={firstName}
+                            onChange={inputHandler}
+                            type="text"
+                            className="form-control mt-[50px]"
+                            placeholder="First Name"
+                            name="firstname"
+                        />
+                        <input
+                            value={lastName}
+                            onChange={inputHandler}
+                            type="text"
+                            className="form-control"
+                            placeholder="Last Name"
+                            name="lastname"
+                        />
+                        <input
+                            value={username}
+                            onChange={inputHandler}
+                            type="text"
+                            className="form-control"
+                            placeholder="username"
+                            name="username"
+                        />
+                        <select
+                            value={ielts}
+                            onChange={inputHandler}
+                            name="ielts"
+                            title="ielts scroe"
+                            className="form-control"
+                        >
+                            <option value="0.5">0.5</option>
+                            <option value="1">1</option>
+                            <option value="1.5">1.5</option>
+                            <option value="2">2</option>
+                            <option value="2.5">2.5</option>
+                            <option value="3">3</option>
+                            <option value="3.5">3.5</option>
+                            <option value="4">4</option>
+                            <option value="4.5">4.5</option>
+                            <option value="5">5</option>
+                            <option value="5.5">5.5</option>
+                            <option value="6">6</option>
+                            <option value="6.5">6.5</option>
+                            <option value="7">7</option>
+                            <option value="7.5">7.5</option>
+                            <option value="8">8</option>
+                            <option value="8.5">8.5</option>
+                            <option value="9">9</option>
+                            <option value="9.5">9.5</option>
+                        </select>
+                        <button
+                            className="w-full p-[10px] text-[20px] font-medium mt-[20px] hover:bg-[#303030] focus:bg-[#303030] outline-none"
+                            type="submit"
+                        >
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    );
+};
+
+export default Page;

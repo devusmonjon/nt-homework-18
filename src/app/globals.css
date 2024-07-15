@@ -44,7 +44,7 @@ body {
   }
 
   td {
-    @apply break-all text-start;
+    @apply break-all text-start sm:text-center;
   }
 
   th,

@@ -140,7 +140,7 @@ const Page = () => {
                     ></div>
                     <form
                         onSubmit={submitHandler}
-                        className="z-[51] w-[700px] rounded-lg table-wrapper fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-black p-[30px]"
+                        className="z-[51] max-w-[700px] w-full px-[40px] rounded-lg table-wrapper fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-black p-[30px]"
                     >
                         <button
                             type="button"

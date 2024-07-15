@@ -106,14 +106,24 @@ const Page = () => {
                         <tbody>
                             {data.map((item, idx) => (
                                 <tr
-                                    className="bg-[#202020] md:bg-none flex flex-col items-start md:table-row"
+                                    className="bg-[#101010] md:bg-none flex flex-col items-start md:table-row"
                                     key={item.id}
                                 >
-                                    <td>{idx + 1}</td>
-                                    <td>{item.firstName}</td>
-                                    <td>{item.lastName}</td>
-                                    <td>{item.username}</td>
-                                    <td>{item.ielts}</td>
+                                    <td className="before:content-['#'] md:before:content-none before:pr-[5px]">
+                                        {idx + 1}
+                                    </td>
+                                    <td className="before:content-['First_Name:'] before:font-medium md:font-medium font-thin md:before:content-none before:pr-[5px]">
+                                        {item.firstName}
+                                    </td>
+                                    <td className="before:content-['Last_Name:'] before:font-medium md:font-medium font-thin md:before:content-none before:pr-[5px]">
+                                        {item.lastName}
+                                    </td>
+                                    <td className="before:content-['username:'] before:font-medium md:font-medium font-thin md:before:content-none before:pr-[5px]">
+                                        {item.username}
+                                    </td>
+                                    <td className="before:content-['IELTS:'] before:font-medium md:font-medium font-thin md:before:content-none before:pr-[5px]">
+                                        {item.ielts}
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>

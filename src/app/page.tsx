@@ -142,7 +142,7 @@ const Page = () => {
                                     </td>
                                     <td className="w-full md:w-[initial]">
                                         <button
-                                            className="w-full md:w-[initial] bg-red-600 hover:bg-red-800 p-2 rounded-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-red-400 ring-offset-transparent"
+                                            className="w-full md:w-[initial] bg-red-600 hover:bg-red-800 p-2 rounded-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-red-400 ring-offset-transparent outline-none"
                                             onClick={() =>
                                                 deleteHandler(item.id)
                                             }

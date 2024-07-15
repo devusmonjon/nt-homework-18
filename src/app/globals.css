@@ -53,7 +53,7 @@ body {
   }
 
   .form-control {
-    @apply w-full bg-transparent pt-[20px] p-[10px] outline-none border-b-2 border-[#303030] focus:border-b-[#004a9f] transition-all duration-300 ease-in-out;
+    @apply w-full bg-transparent pt-[20px] p-[10px] outline-none border-b-2 border-[#303030] focus:border-b-[#fff] transition-all duration-300 ease-in-out;
   }
 
   select,

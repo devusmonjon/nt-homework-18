@@ -85,6 +85,12 @@ const Page = () => {
         setModal(!modal);
     };
 
+    const deleteHandler = (id: number) => {
+        const newData = data.filter((item) => item.id !== id);
+        setData(newData);
+        localStorage.setItem("users", JSON.stringify(newData));
+    };
+
     return (
         <main className="w-full h-screen overflow-hidden">
             <div className="w-full max-w-[1200px] px-[40px] m-[0_auto]">
@@ -110,6 +116,7 @@ const Page = () => {
                                     username
                                 </th>
                                 <th className="md:table-cell hidden">IELTS</th>
+                                <th className="md:table-cell hidden">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -132,6 +139,16 @@ const Page = () => {
                                     </td>
                                     <td className="before:content-['IELTS:'] before:font-medium md:font-medium font-thin md:before:content-none before:pr-[5px]">
                                         {item.ielts}
+                                    </td>
+                                    <td className="w-full md:w-[initial]">
+                                        <button
+                                            className="w-full md:w-[initial] bg-red-600 hover:bg-red-800 p-2 rounded-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-red-400 ring-offset-transparent"
+                                            onClick={() =>
+                                                deleteHandler(item.id)
+                                            }
+                                        >
+                                            Delete
+                                        </button>
                                     </td>
                                 </tr>
                             ))}

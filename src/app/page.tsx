@@ -41,20 +41,28 @@ const Page = () => {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (firstName && lastName && username && ielts) {
-            const newData = {
-                id: new Date().getTime(),
-                firstName,
-                lastName,
-                username,
-                ielts,
-            };
-            setData([...data, newData]);
-            localStorage.setItem("users", JSON.stringify([...data, newData]));
-            setFirstName("");
-            setLastName("");
-            setUsername("");
-            setIelts(0.5);
-            setModal(false);
+            const condition = confirm(
+                `Check the result!\n\nFirst Name: ${firstName}\nLast Name: ${lastName}\nusername: ${username}\nIELTS score: ${ielts}\n\nAre you sure?`,
+            );
+            if (condition) {
+                const newData = {
+                    id: new Date().getTime(),
+                    firstName,
+                    lastName,
+                    username,
+                    ielts,
+                };
+                setData([...data, newData]);
+                localStorage.setItem(
+                    "users",
+                    JSON.stringify([...data, newData]),
+                );
+                setFirstName("");
+                setLastName("");
+                setUsername("");
+                setIelts(0.5);
+                setModal(false);
+            }
         } else {
             alert("All fields are required");
         }
@@ -71,7 +79,9 @@ const Page = () => {
                 setLastName(e.target.value);
                 break;
             case "username":
-                setUsername(e.target.value);
+                /[^a-zA-Z0-9]/.test(e.target.value)
+                    ? setUsername(e.target.value.slice(0, -1))
+                    : setUsername(e.target.value);
                 break;
             case "ielts":
                 setIelts(Number(e.target.value));
@@ -231,6 +241,9 @@ const Page = () => {
                             <option value="9.5">9.5</option>
                         </select>
                         <button
+                            disabled={
+                                !firstName || !lastName || !username || !ielts
+                            }
                             className="w-full p-[10px] text-[20px] font-medium mt-[20px] bg-[#303030] hover:bg-[#404040] focus:bg-[#404040] outline-none rounded-lg"
                             type="submit"
                         >

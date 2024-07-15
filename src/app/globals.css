@@ -65,4 +65,8 @@ body {
     @apply bg-black;
   }
 
+  button[disabled] {
+    @apply cursor-not-allowed opacity-50 bg-[#303030] !important;
+  }
+
 }

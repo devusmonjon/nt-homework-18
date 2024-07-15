@@ -86,9 +86,12 @@ const Page = () => {
     };
 
     const deleteHandler = (id: number) => {
-        const newData = data.filter((item) => item.id !== id);
-        setData(newData);
-        localStorage.setItem("users", JSON.stringify(newData));
+        const condition = confirm("Are you sure?");
+        if (condition) {
+            const newData = data.filter((item) => item.id !== id);
+            setData(newData);
+            localStorage.setItem("users", JSON.stringify(newData));
+        }
     };
 
     return (

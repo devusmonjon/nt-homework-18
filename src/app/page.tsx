@@ -231,7 +231,7 @@ const Page = () => {
                             <option value="9.5">9.5</option>
                         </select>
                         <button
-                            className="w-full p-[10px] text-[20px] font-medium mt-[20px] hover:bg-[#303030] focus:bg-[#303030] outline-none"
+                            className="w-full p-[10px] text-[20px] font-medium mt-[20px] bg-[#303030] hover:bg-[#404040] focus:bg-[#404040] outline-none rounded-lg"
                             type="submit"
                         >
                             Submit

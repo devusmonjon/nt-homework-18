@@ -90,7 +90,7 @@ const Page = () => {
                     <table className="w-full text-center">
                         <thead className="bg-[#222]">
                             <tr>
-                                <th className="md:table-cell hidden">#ID</th>
+                                <th className="md:table-cell hidden"># ID</th>
                                 <th className="md:table-cell hidden">
                                     First Name
                                 </th>

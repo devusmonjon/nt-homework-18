@@ -63,14 +63,21 @@ const Page = () => {
     const inputHandler = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
     ) => {
-        if (e.target.name === "firstname") {
-            setFirstName(e.target.value);
-        } else if (e.target.name === "lastname") {
-            setLastName(e.target.value);
-        } else if (e.target.name === "username") {
-            setUsername(e.target.value);
-        } else if (e.target.name === "ielts") {
-            setIelts(Number(e.target.value));
+        switch (e.target.name) {
+            case "firstname":
+                setFirstName(e.target.value);
+                break;
+            case "lastname":
+                setLastName(e.target.value);
+                break;
+            case "username":
+                setUsername(e.target.value);
+                break;
+            case "ielts":
+                setIelts(Number(e.target.value));
+                break;
+            default:
+                break;
         }
     };
 
